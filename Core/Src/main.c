@@ -148,7 +148,7 @@ void SystemClock_Config(void)
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
-  LL_Init1msTick(800000000);
+  LL_Init1msTick(80000000);
 
   LL_SetSystemCoreClock(80000000);
 }

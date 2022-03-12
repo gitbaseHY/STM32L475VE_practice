@@ -1,7 +1,7 @@
 Dependencies for Project 'stm32l475ve', Target 'stm32l475ve': (DO NOT MODIFY !)
-F (startup_stm32l475xx.s)(0x622CAAE9)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "STM32L475xx SETA 1"--list startup_stm32l475xx.lst --xref -o stm32l475ve\startup_stm32l475xx.o --depend stm32l475ve\startup_stm32l475xx.d)
-F (../Core/Src/main.c)(0x622CAB69)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\main.o --omf_browse stm32l475ve\main.crf --depend stm32l475ve\main.d)
-I (../Core/Inc/main.h)(0x622CAAE6)
+F (startup_stm32l475xx.s)(0x622CAE7C)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 525" --pd "_RTE_ SETA 1" --pd "STM32L475xx SETA 1"--list startup_stm32l475xx.lst --xref -o stm32l475ve\startup_stm32l475xx.o --depend stm32l475ve\startup_stm32l475xx.d)
+F (../Core/Src/main.c)(0x622CAE78)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\main.o --omf_browse stm32l475ve\main.crf --depend stm32l475ve\main.d)
+I (../Core/Inc/main.h)(0x622CAE78)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h)(0x61B561BA)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61B561B4)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l475xx.h)(0x61B561B4)
@@ -22,12 +22,12 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h)(0x61B561BA)
-I (../Core/Inc/usart.h)(0x622CAAE5)
+I (../Core/Inc/usart.h)(0x622CAE77)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-I (../Core/Inc/gpio.h)(0x622CAAE5)
-F (../Core/Src/gpio.c)(0x622CAAE5)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\gpio.o --omf_browse stm32l475ve\gpio.crf --depend stm32l475ve\gpio.d)
-I (../Core/Inc/gpio.h)(0x622CAAE5)
-I (../Core/Inc/main.h)(0x622CAAE6)
+I (../Core/Inc/gpio.h)(0x622CAE77)
+F (../Core/Src/gpio.c)(0x622CAE77)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\gpio.o --omf_browse stm32l475ve\gpio.crf --depend stm32l475ve\gpio.d)
+I (../Core/Inc/gpio.h)(0x622CAE77)
+I (../Core/Inc/main.h)(0x622CAE78)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h)(0x61B561BA)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61B561B4)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l475xx.h)(0x61B561B4)
@@ -48,9 +48,9 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h)(0x61B561BA)
-F (../Core/Src/usart.c)(0x622CAAE5)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\usart.o --omf_browse stm32l475ve\usart.crf --depend stm32l475ve\usart.d)
-I (../Core/Inc/usart.h)(0x622CAAE5)
-I (../Core/Inc/main.h)(0x622CAAE6)
+F (../Core/Src/usart.c)(0x622CAE77)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\usart.o --omf_browse stm32l475ve\usart.crf --depend stm32l475ve\usart.d)
+I (../Core/Inc/usart.h)(0x622CAE77)
+I (../Core/Inc/main.h)(0x622CAE78)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h)(0x61B561BA)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61B561B4)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l475xx.h)(0x61B561B4)
@@ -72,8 +72,8 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h)(0x61B561BA)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599ECD2C)
-F (../Core/Src/stm32l4xx_it.c)(0x622CAB80)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\stm32l4xx_it.o --omf_browse stm32l475ve\stm32l4xx_it.crf --depend stm32l475ve\stm32l4xx_it.d)
-I (../Core/Inc/main.h)(0x622CAAE6)
+F (../Core/Src/stm32l4xx_it.c)(0x622CAEB0)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\stm32l4xx_it.o --omf_browse stm32l475ve\stm32l4xx_it.crf --depend stm32l475ve\stm32l4xx_it.d)
+I (../Core/Inc/main.h)(0x622CAE78)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_crs.h)(0x61B561BA)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61B561B4)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l475xx.h)(0x61B561B4)
@@ -94,7 +94,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_pwr.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_dma.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_usart.h)(0x61B561BA)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_gpio.h)(0x61B561BA)
-I (../Core/Inc/stm32l4xx_it.h)(0x622CAAE6)
+I (../Core/Inc/stm32l4xx_it.h)(0x622CAE78)
 F (../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_utils.c)(0x61B561BA)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_stm32l475ve-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32L4xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32L475xx -DUSE_FULL_LL_DRIVER -DHSE_VALUE="8000000" -DHSE_STARTUP_TIMEOUT="100" -DLSE_STARTUP_TIMEOUT="5000" -DLSE_VALUE="32768" -DMSI_VALUE="4000000" -DEXTERNALSAI1_CLOCK_VALUE="2097000" -DEXTERNALSAI2_CLOCK_VALUE="2097000" -DHSI_VALUE="16000000" -DLSI_VALUE="32000" -DVDD_VALUE="3300" -DPREFETCH_ENABLE="0" -DINSTRUCTION_CACHE_ENABLE="1" -DDATA_CACHE_ENABLE="1" -DSTM32L475xx-o stm32l475ve\stm32l4xx_ll_utils.o --omf_browse stm32l475ve\stm32l4xx_ll_utils.crf --depend stm32l475ve\stm32l4xx_ll_utils.d)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_utils.h)(0x61B561BA)
 I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x61B561B4)
