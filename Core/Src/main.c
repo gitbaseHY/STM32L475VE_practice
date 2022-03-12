@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -90,18 +89,14 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+  LL_SYSTICK_EnableIT();
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART1_UART_Init();
-  MX_TIM15_Init();
   /* USER CODE BEGIN 2 */
-  printf("After Peripel init!!\r\n");
-  // uint8_t str[] = {0x01, 0x02, 0x03, 0x04};
 
-  // USART1_SendByte(str, sizeof(str)/sizeof(str[0]));
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -153,7 +148,7 @@ void SystemClock_Config(void)
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
-  LL_Init1msTick(10000000);
+  LL_Init1msTick(800000000);
 
   LL_SetSystemCoreClock(80000000);
 }

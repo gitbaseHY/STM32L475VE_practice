@@ -27,17 +27,17 @@ uint16_t USART1_SendByte(uint8_t *buff, uint16_t len)
   while(len--)
   {
     while (LL_USART_IsActiveFlag_TC(USART1) == RESET);
-    LL_USART_TransmitData8(USART1,*buff++);  //把数据再从串口发送出去
+    LL_USART_TransmitData8(USART1,*buff++);  //把数据再从串口发送出�??
   }
   return 1;
 }
 
 int fputc(int ch, FILE *f)
 {
-    // while((USART1->ISR & 0X40) == 0); //循环发送,直到发送完毕
+    // while((USART1->ISR & 0X40) == 0); //循环发�??,直到发�?�完�??
     // USART1->TDR = (uint8_t) ch;
     while (LL_USART_IsActiveFlag_TC(USART1) == RESET);
-    LL_USART_TransmitData8(USART1,ch);  //把数据再从串口发送出去
+    LL_USART_TransmitData8(USART1,ch);  //把数据再从串口发送出�??
     return ch;
 }
 /* USER CODE END 0 */
