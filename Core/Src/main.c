@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "timer_task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,7 +97,9 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  timer_task_register(RUN_ONCE, 50,  timer_task_test);
+  timer_task_register(RUN_LOOP, 100, timer_task_test);
+  timer_task_register(RUN_LOOP, 200, timer_task_test);
   /* USER CODE END 2 */
 
   /* Infinite loop */

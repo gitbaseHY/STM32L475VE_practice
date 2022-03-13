@@ -4,6 +4,7 @@
 "stm32l475ve\gpio.o"
 "stm32l475ve\usart.o"
 "stm32l475ve\stm32l4xx_it.o"
+"stm32l475ve\timer_task.o"
 "stm32l475ve\stm32l4xx_ll_utils.o"
 "stm32l475ve\stm32l4xx_ll_exti.o"
 "stm32l475ve\stm32l4xx_ll_gpio.o"
@@ -12,7 +13,7 @@
 "stm32l475ve\stm32l4xx_ll_rcc.o"
 "stm32l475ve\stm32l4xx_ll_dma.o"
 "stm32l475ve\system_stm32l4xx.o"
---strict --scatter "stm32l475ve\stm32l475ve.sct"
+--library_type=microlib --strict --scatter "stm32l475ve\stm32l475ve.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "stm32l475ve.map" -o stm32l475ve\stm32l475ve.axf
