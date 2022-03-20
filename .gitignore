@@ -1,0 +1,7 @@
+.vscode
+*.o
+*.a
+*.map
+*.crf
+*.dep
+#*.ioc
