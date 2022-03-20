@@ -1,6 +1,7 @@
-.vscode/
+.vscode
 *.a
 *.o
 *.out
 *.obj
 *.html
+*.crf

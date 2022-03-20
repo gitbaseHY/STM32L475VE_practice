@@ -97,9 +97,18 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  timer_task_register(RUN_ONCE, 50,  timer_task_test);
-  timer_task_register(RUN_LOOP, 100, timer_task_test);
-  timer_task_register(RUN_LOOP, 200, timer_task_test);
+  printf("Init Complete!\r\n");
+  TIMER_ID timer_once_print = 0x00;
+  TIMER_ID timer_loop_print = 0x00;
+  TIMER_ID timer_test_print = 0x00;
+  
+  timer_once_print = timer_task_register(RUN_ONCE, 50,  timer_task_test);
+  timer_loop_print = timer_task_register(RUN_LOOP, 100, timer_task_test);
+  timer_test_print = timer_task_register(RUN_LOOP, 200, timer_task_test);
+
+  timer_task_start(timer_once_print);
+  timer_task_start(timer_loop_print);
+  timer_task_start(timer_test_print);
   /* USER CODE END 2 */
 
   /* Infinite loop */

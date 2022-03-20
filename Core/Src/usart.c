@@ -92,7 +92,7 @@ void MX_USART1_UART_Init(void)
   LL_USART_Enable(USART1);
   /* USER CODE BEGIN USART1_Init 2 */
   LL_USART_EnableIT_RXNE(USART1);   
-	LL_USART_EnableIT_PE(USART1); 
+  LL_USART_EnableIT_PE(USART1); 
   /* USER CODE END USART1_Init 2 */
 
 }
