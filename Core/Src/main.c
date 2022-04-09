@@ -26,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include "timer_task.h"
+#include "queue.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,9 +103,13 @@ int main(void)
   TIMER_ID timer_loop_print = 0x00;
   TIMER_ID timer_test_print = 0x00;
   
-  timer_once_print = timer_task_register(RUN_ONCE, 50,  timer_task_test);
-  timer_loop_print = timer_task_register(RUN_LOOP, 100, timer_task_test);
-  timer_test_print = timer_task_register(RUN_LOOP, 200, timer_task_test);
+//  timer_once_print = timer_task_register(RUN_ONCE, 500,  timer_task_test);
+//  timer_loop_print = timer_task_register(RUN_LOOP, 1000, timer_task_test);
+//  timer_test_print = timer_task_register(RUN_LOOP, 2000, timer_task_test);
+
+  timer_once_print = timer_task_register(RUN_ONCE, 500,  NULL);
+  timer_loop_print = timer_task_register(RUN_LOOP, 1000, NULL);
+  timer_test_print = timer_task_register(RUN_LOOP, 2000, NULL);
 
   timer_task_start(timer_once_print);
   timer_task_start(timer_loop_print);
@@ -118,6 +123,19 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	if(timer_isUpdata(timer_once_print))
+	{
+		printf("No.%d: timer once print!!\n", timer_once_print);
+	}
+	if(timer_isUpdata(timer_loop_print))
+	{
+		printf("No.%d: timer loop print!!\n", timer_loop_print);
+	}
+ 	if(timer_isUpdata(timer_test_print))
+	{
+		printf("No.%d: timer test print!!\n", timer_test_print);
+	}
+
   }
   /* USER CODE END 3 */
 }
@@ -160,7 +178,7 @@ void SystemClock_Config(void)
   LL_RCC_SetAPB1Prescaler(LL_RCC_APB1_DIV_1);
   LL_RCC_SetAPB2Prescaler(LL_RCC_APB2_DIV_1);
 
-  LL_Init1msTick(800000000);
+  LL_Init1msTick(80000000);
 
   LL_SetSystemCoreClock(80000000);
 }

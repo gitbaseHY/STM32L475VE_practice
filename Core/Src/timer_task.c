@@ -4,6 +4,16 @@
 
 static volatile T_TIMER_TASK Timer_task_array[TIMER_TASK_MAX_LEN];
 
+TIMER_OPT_RES timer_isUpdata(TIMER_ID id)
+{
+	if(Timer_task_array[id].update == TIMER_UPDATED)
+	{
+		Timer_task_array[id].update = TIMER_CLEARED;
+		return TIMER_UPDATED;
+	}
+	return TIMER_CLEARED;
+}
+
 TIMER_ID timer_task_register(uint8_t mode, uint16_t delay_ms, timer_handle reg_handler)
 {
     TIMER_ID index = 0x00;
@@ -16,6 +26,7 @@ TIMER_ID timer_task_register(uint8_t mode, uint16_t delay_ms, timer_handle reg_h
             Timer_task_array[index].total_delay = delay_ms;
 			Timer_task_array[index].func = reg_handler;
 			Timer_task_array[index].take = TIMER_ID_TAKEN;
+			Timer_task_array[index].update = TIMER_CLEARED;
 			return index;
         }
     }
@@ -55,7 +66,19 @@ TIMER_OPT_RES timer_task_pause(TIMER_ID id)
 	if(Timer_task_array[id].state == TIMER_PAUSE)
 		return OPT_FAILED;
 
-	Timer_task_array[id].state = TIMER_PAUSE;
+	Timer_task_array[id].state = TIMER_INACTIVE;
+	return OPT_SUCCESS;	
+}
+
+TIMER_OPT_RES timer_task_resume(TIMER_ID id)
+{
+	if(id > TIMER_TASK_MAX_LEN)
+		return OPT_FAILED;	
+
+	if(Timer_task_array[id].state != TIMER_PAUSE)
+		return OPT_FAILED;
+
+	Timer_task_array[id].state = TIMER_ACTIVE;
 	return OPT_SUCCESS;	
 }
 
@@ -85,6 +108,10 @@ void timer_task_operation(void)
 			if(Timer_task_array[index].func)
 			{
 				Timer_task_array[index].func(index, Timer_task_array[index].total_delay);
+			}
+			else
+			{
+				Timer_task_array[index].update = TIMER_UPDATED;
 			}
 		}
     }	

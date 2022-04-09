@@ -5,3 +5,9 @@
 *.crf
 *.dep
 #*.ioc
+*.d
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.htm
+

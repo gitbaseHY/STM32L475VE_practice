@@ -40,28 +40,30 @@ typedef struct
     uint8_t timer_id;
 	union
 	{
-		uint8_t timer_ctrl;
+		volatile uint8_t timer_ctrl;
 		struct
 		{
-			uint8_t timer_loop: 2;
-			uint8_t state     : 2;
-			uint8_t take      : 2;
-			uint8_t resever   : 2;
+			volatile uint8_t timer_loop: 2;
+			volatile uint8_t state     : 2;
+			volatile uint8_t take      : 2;
+			volatile uint8_t update    : 2;
 		};
 	};
-    uint16_t cur_delay;
+    volatile uint16_t cur_delay;
     uint16_t total_delay;
     timer_handle func;
 }T_TIMER_TASK;
 
 
-
-TIMER_ID timer_task_register(uint8_t mode, uint16_t delay_ms, timer_handle);
 void timer_task_operation(void);
-void timer_task_test(TIMER_ID id, uint16_t delay);
+TIMER_ID timer_task_register(uint8_t mode, uint16_t delay_ms, timer_handle);
+TIMER_OPT_RES timer_isUpdata(TIMER_ID id);
 TIMER_OPT_RES timer_task_start(TIMER_ID id);
 TIMER_OPT_RES timer_task_stop(TIMER_ID id);
 TIMER_OPT_RES timer_task_pause(TIMER_ID id);
+TIMER_OPT_RES timer_task_resume(TIMER_ID id);
+
+void timer_task_test(TIMER_ID id, uint16_t delay);
 
 
 #endif

@@ -5,6 +5,7 @@
 "stm32l475ve\usart.o"
 "stm32l475ve\stm32l4xx_it.o"
 "stm32l475ve\timer_task.o"
+"stm32l475ve\queue.o"
 "stm32l475ve\stm32l4xx_ll_utils.o"
 "stm32l475ve\stm32l4xx_ll_exti.o"
 "stm32l475ve\stm32l4xx_ll_gpio.o"
