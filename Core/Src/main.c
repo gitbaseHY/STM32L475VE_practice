@@ -58,6 +58,26 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+struct timer_kk
+{
+  uint8_t  id;
+  uint16_t delay_ms;
+};
+
+struct timer_kk tt_test = {0};
+
+QueueHandle_t timer_queue = NULL; 
+
+void QueueTest(TIMER_ID id, uint16_t delay)
+{
+  struct timer_kk gg_test = {0};
+
+  gg_test.id = id;
+  gg_test.delay_ms = delay;
+
+  QueueSend(timer_queue, &gg_test);
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -99,20 +119,11 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   printf("Init Complete!\r\n");
-  TIMER_ID timer_once_print = 0x00;
-  TIMER_ID timer_loop_print = 0x00;
+
+  timer_queue = QueueCreate(8, sizeof(struct timer_kk));
   TIMER_ID timer_test_print = 0x00;
-  
-//  timer_once_print = timer_task_register(RUN_ONCE, 500,  timer_task_test);
-//  timer_loop_print = timer_task_register(RUN_LOOP, 1000, timer_task_test);
-//  timer_test_print = timer_task_register(RUN_LOOP, 2000, timer_task_test);
 
-  timer_once_print = timer_task_register(RUN_ONCE, 500,  NULL);
-  timer_loop_print = timer_task_register(RUN_LOOP, 1000, NULL);
-  timer_test_print = timer_task_register(RUN_LOOP, 2000, NULL);
-
-  timer_task_start(timer_once_print);
-  timer_task_start(timer_loop_print);
+  timer_test_print = timer_task_register(RUN_LOOP, 1000, QueueTest);
   timer_task_start(timer_test_print);
   /* USER CODE END 2 */
 
@@ -123,17 +134,13 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	if(timer_isUpdata(timer_once_print))
+	if(QueuePeek(timer_queue, &tt_test))
 	{
-		printf("No.%d: timer once print!!\n", timer_once_print);
+		printf("QueuePeek :    %d, %d\n", tt_test.id, tt_test.delay_ms);
 	}
-	if(timer_isUpdata(timer_loop_print))
+	if(QueueReceive(timer_queue, &tt_test))
 	{
-		printf("No.%d: timer loop print!!\n", timer_loop_print);
-	}
- 	if(timer_isUpdata(timer_test_print))
-	{
-		printf("No.%d: timer test print!!\n", timer_test_print);
+		printf("QueueReceive : %d, %d\n", tt_test.id, tt_test.delay_ms);
 	}
 
   }

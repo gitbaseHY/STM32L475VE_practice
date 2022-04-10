@@ -12,7 +12,6 @@
 #define QOPT_SUCCESS  0x01
 
 typedef uint8_t OPT_RES;
-typedef struct QueueBasic * QueueHandle_t;
 
 typedef enum
 {
@@ -35,6 +34,13 @@ typedef struct
 	uint16_t tail;
 }QUEUE;
 
+OPT_RES isQueueFull(QUEUE *evt_queue);
+OPT_RES isQueueEmpty(QUEUE *evt_queue);
+OPT_RES EnQueue(QUEUE *evt_queue, EVENT_PARAM *param);
+OPT_RES DeQueue(QUEUE *evt_queue, EVENT_PARAM *param);
+OPT_RES PeekQueue(QUEUE *evt_queue, EVENT_PARAM *param);
+
+
 enum
 {
 	xPosition_Front = 0x01,
@@ -55,6 +61,8 @@ typedef struct QueueBasic
 	volatile uint16_t uxMessageWaitting;
 }Queue_t;
 
+typedef struct QueueBasic * QueueHandle_t;
+
 #define QueueSend(xQueue, pvItemToQueue) \
 		QueueGenericSend(xQueue, pvItemToQueue, xPosition_Back)
 
@@ -64,24 +72,9 @@ typedef struct QueueBasic
 
 QueueHandle_t QueueCreate(uint16_t QueueLength, uint16_t ItemSize);
 OPT_RES QueueGenericSend(QueueHandle_t xQueue, const void * const pvItemToQueue, uint16_t xCopyPosition);
-OPT_RES QueueGenericReceive(QueueHandle_t xQueue, void * const pvItemToQueue);
+OPT_RES QueueReceive(QueueHandle_t xQueue, void * const pvItemToQueue);
 OPT_RES QueuePeek(QueueHandle_t xQueue, void * const pvBuffer);
 void QueueDelete(QueueHandle_t xQueue);
-
-
-OPT_RES isQueueFull(QUEUE *evt_queue);
-OPT_RES isQueueEmpty(QUEUE *evt_queue);
-OPT_RES EnQueue(QUEUE *evt_queue, EVENT_PARAM *param);
-OPT_RES DeQueue(QUEUE *evt_queue, EVENT_PARAM *param);
-OPT_RES PeekQueue(QUEUE *evt_queue, EVENT_PARAM *param);
-
-
-
-
-
-
-
-
 
 #endif
 

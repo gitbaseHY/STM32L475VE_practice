@@ -80,7 +80,7 @@ QueueHandle_t QueueCreate(uint16_t QueueLength, uint16_t ItemSize)
 
 OPT_RES QueueGenericSend(QueueHandle_t xQueue, const void * const pvItemToQueue, uint16_t xCopyPosition)
 {
-	if(xQueue == NULL || pvItemToQueue == NULL || xCopyPosition != xPosition_Back || xCopyPosition != xPosition_Front)  /* param is valid */
+	if(xQueue == NULL || pvItemToQueue == NULL || (xCopyPosition != xPosition_Back && xCopyPosition != xPosition_Front))  /* param is valid */
 	{
 		return QOPT_FAILED;
 	}
@@ -113,7 +113,7 @@ OPT_RES QueueGenericSend(QueueHandle_t xQueue, const void * const pvItemToQueue,
 	return QOPT_SUCCESS;
 }
 
-OPT_RES QueueGenericReceive(QueueHandle_t xQueue, void * const pvItemToQueue)
+OPT_RES QueueReceive(QueueHandle_t xQueue, void * const pvItemToQueue)
 {
 	if(xQueue == NULL || pvItemToQueue == NULL)  /* param is valid */
 	{
@@ -137,7 +137,31 @@ OPT_RES QueueGenericReceive(QueueHandle_t xQueue, void * const pvItemToQueue)
 
 OPT_RES QueuePeek(QueueHandle_t xQueue, void * const pvBuffer)
 {
+	uint8_t * pTempReadFrom = NULL;
+
+	if(xQueue == NULL || pvBuffer == NULL)    /* param is valid */
+	{
+		return QOPT_FAILED;
+	}
+	if(xQueue->uxMessageWaitting <= 0)    /* Queue is empty */
+	{
+		return QOPT_FAILED;
+	}		
+
+	/* record former pointer */
+	pTempReadFrom = xQueue->pReadFrom;    
 	
+	xQueue->pReadFrom += xQueue->uItemSize;
+	if(xQueue->pReadFrom >= xQueue->pTail)
+	{
+		xQueue->pReadFrom = xQueue->pHead;
+	}
+	memcpy(pvBuffer, xQueue->pReadFrom, xQueue->uItemSize);
+
+	/* recover former pointer */
+	xQueue->pReadFrom = pTempReadFrom;    
+	
+	return QOPT_SUCCESS;
 }
 
 void QueueDelete(QueueHandle_t xQueue)
